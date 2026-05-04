@@ -65,6 +65,10 @@ window.goto = function(page) {
     l.classList.toggle('on', l.dataset.p === page);
   });
 
+  // Close mobile menu if open
+  const navLinks = document.getElementById('navLinks');
+  if (navLinks) navLinks.classList.remove('open');
+
   // Handle Nav/Footer visibility for Admin
   const isAdmin = page === 'admin' || page === 'adminlogin';
   document.getElementById('nav').style.display = isAdmin ? 'none' : '';
