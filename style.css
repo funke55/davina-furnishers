@@ -52,6 +52,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 body {
@@ -59,6 +60,7 @@ body {
   background: var(--cream);
   color: var(--ink);
   overflow-x: hidden;
+  width: 100%;
   line-height: 1.6;
 }
 
@@ -1757,11 +1759,24 @@ footer { background: var(--ink); padding: 100px 0 0; color: #fff; }
 }
 
 @media (max-width: 480px) {
-  .hero-h1 { font-size: 2.5rem; }
-  .hero-btns { flex-direction: column; width: 100%; gap: 12px; }
-  .hero-btns .btn-gold, .hero-btns .btn-ghost { width: 100%; justify-content: center; }
-  .cats-grid { grid-template-columns: 1fr; }
-  .why-img-wrap { height: 350px; }
-  .why-badge { min-width: 180px; padding: 12px 20px; bottom: 16px; left: 16px; }
-  .wb-num { font-size: 2rem; }
+  .hero-h1 { font-size: 2.2rem; }
+  .hero-left { padding: 90px 20px 30px; }
+  .hero-sub { font-size: 1rem; padding: 0 10px; }
+  .hero-btns { flex-direction: column; width: 100%; gap: 10px; padding: 0 10px; }
+  .hero-btns .btn-primary, .hero-btns .btn-ghost { width: 100%; justify-content: center; padding: 14px 24px; font-size: 0.85rem; }
+  
+  .s-head h2 { font-size: 1.8rem; }
+  .cats-grid { grid-template-columns: 1fr; padding: 0 20px; }
+  .why-img-wrap { height: 300px; }
+  .why-badge { min-width: 160px; padding: 10px 16px; bottom: 12px; left: 12px; }
+  .wb-num { font-size: 1.8rem; }
+  
+  section { padding: 40px 0; }
+  .s-wrap { padding: 0 20px; }
+}
+
+@media (max-width: 360px) {
+  .hero-h1 { font-size: 2rem; }
+  .n-logo span { font-size: 1rem; }
+  .n-logo-mark { width: 32px; height: 32px; font-size: 0.8rem; }
 }
