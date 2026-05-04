@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Davina Furnishers — Premium Handcrafted Furniture in Lilongwe, Malawi</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Discover premium handcrafted furniture at Davina Furnishers. Custom sofas, beds, dining sets, and wardrobes built by master craftsmen in Lilongwe, Malawi. Quality guaranteed.">
+    <meta name="keywords" content="Furniture Malawi, Lilongwe Furniture, Handcrafted Furniture, Custom Sofa Malawi, Davina Furnishers, Bespoke Woodwork Lilongwe">
+    <meta name="author" content="Davina Furnishers">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://davinafurnishers.mw/">
+    <meta property="og:title" content="Davina Furnishers — Lilongwe's Finest Furniture">
+    <meta property="og:description" content="Premium handcrafted furniture for Malawian homes. Custom orders delivered across Lilongwe.">
+    <meta property="og:image" content="assets/hero_sofa.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="nav">
+    <div class="nav-inner">
+        <a class="n-logo" href="#" onclick="goto('home')">
+            <div class="n-logo-mark">DF</div>
+            <span>Davina Furnishers</span>
+        </a>
+        <div class="n-links" id="navLinks">
+            <a class="n-lnk on" data-p="home" href="#" onclick="goto('home')">Home</a>
+            <a class="n-lnk" data-p="gallery" href="#" onclick="goto('gallery')">Gallery</a>
+            <a class="n-lnk" data-p="custom" href="#" onclick="goto('custom')">Custom Order</a>
+            <a class="n-lnk" data-p="about" href="#" onclick="goto('about')">About</a>
+            <a class="n-lnk" data-p="contact" href="#" onclick="goto('contact')">Contact</a>
+        </div>
+        <button class="n-cta" onclick="goto('gallery')">Shop Now</button>
+        <button class="n-hbg" id="hbg" onclick="toggleMenu()" aria-label="Toggle Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="pg-home" class="pg on">
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-left">
+            <div class="hero-tag">Lilongwe's Premium Choice</div>
+            <h1 class="hero-h1">Where Luxury Meets <em>Malawian</em> Craft</h1>
+            <p class="hero-sub">Handcrafted furniture that defines your space. Built for durability, designed for elegance, and delivered with care across Lilongwe.</p>
+            <div class="hero-btns">
+                <button class="btn-primary" onclick="goto('gallery')">
+                    <svg viewBox="0 0 16 16" fill="currentColor" style="width:18px;height:18px"><path d="M4 6h16v2H4zm2 5h12v2H6zm4 5h4v2h-4z"/></svg>
+                    View Collection
+                </button>
+                <button class="btn-ghost" onclick="goto('custom')">Custom Design Request</button>
+            </div>
+            <div class="hero-stats">
+                <div class="h-stat"><span>500+</span><small>Homeowners</small></div>
+                <div class="h-div"></div>
+                <div class="h-stat"><span>8+</span><small>Years</small></div>
+                <div class="h-div"></div>
+                <div class="h-stat"><span>100%</span><small>Artisanal</small></div>
+            </div>
+        </div>
+        <div class="hero-right">
+            <img src="assets/hero_sofa.png" alt="Luxury Handcrafted Sofa" class="hero-img-main"/>
+            <div class="hero-img-overlay"></div>
+            <div class="hero-badge-float">
+                <div class="hbf-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                </div>
+                <div class="hbf-txt">
+                    <strong>2-Year Warranty</strong>
+                    <span>On every custom piece</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-strip">
+        <div class="marquee-inner" id="marqueeInner"></div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section class="cats-sec">
+        <div class="s-wrap">
+            <div class="s-head fade-up">
+                <div class="s-tag">Explore Collections</div>
+                <h2>Refined Furniture For Every Room</h2>
+                <p>From timeless sofas to bespoke dining sets, find the perfect piece for your home.</p>
+            </div>
+            <div class="cats-grid" id="catsGrid"></div>
+        </div>
+    </section>
+
+    <!-- FEATURED -->
+    <section class="feat-sec">
+        <div class="s-head fade-up">
+            <div class="s-tag">Curated Picks</div>
+            <h2>Featured Masterpieces</h2>
+            <p>A showcase of our most popular and exquisitely crafted furniture designs.</p>
+        </div>
+        <div class="products-grid" id="featGrid"></div>
+        <div style="text-align:center; margin-top:64px;">
+            <button class="btn-primary" onclick="goto('gallery')">See Full Collection →</button>
+        </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="why-sec">
+        <div class="s-wrap">
+            <div class="why-grid">
+                <div class="why-left fade-up">
+                    <div class="s-tag">The Davina Standard</div>
+                    <h2>Uncompromising Quality. Local Soul.</h2>
+                    <p>We blend traditional Malawian craftsmanship with modern design sensibilities. Every piece of timber is hand-selected and every stitch is double-checked.</p>
+                    <div class="why-features">
+                        <div class="w-feat">
+                            <div class="w-icon"><svg viewBox="0 0 24 24"><path d="M12 1L9 9H1l7 5.5L5 23l7-5 7 5-3-8.5L23 9h-8z"/></svg></div>
+                            <h4>Master Artisans</h4>
+                            <p>Crafted by Lilongwe's most experienced woodworkers.</p>
+                        </div>
+                        <div class="w-feat">
+                            <div class="w-icon"><svg viewBox="0 0 24 24"><path d="M6.05 8.05a7.007 7.007 0 0 0-.02 9.88c1.47-3.4 4.09-6.24 7.36-7.93A15.39 15.39 0 0 0 8 16.32c.83.83 1.85 1.42 2.97 1.72A6.98 6.98 0 0 0 17 15c0-1.87-.73-3.63-2.05-4.95A6.98 6.98 0 0 0 10 8c-.96 0-1.9.2-2.78.57A4.99 4.99 0 0 1 10 3h1a9 9 0 0 1 9 9 9 9 0 0 1-9 9H6v-1a9 9 0 0 1 .05-11.95z"/></svg></div>
+                            <h4>Ethical Timber</h4>
+                            <p>Sustainable, premium hardwood sourced locally.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="why-img-wrap fade-up">
+                    <img src="assets/workshop.png" alt="Our Furniture Workshop"/>
+                    <div class="why-badge">
+                        <div class="wb-num">500+</div>
+                        <div class="wb-lbl">Malawian Families Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testi-sec fade-up">
+        <div class="s-wrap">
+            <div class="testi-head">
+                <div class="t-tag">CLIENT REVIEWS</div>
+                <h2 class="t-title">What Our Customers Say</h2>
+                <p class="t-sub">Real reviews from real Malawian homes</p>
+            </div>
+            <div class="testi-grid">
+                <div class="t-card">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-text">"The sofa set I ordered exceeded every expectation. Beautifully crafted and incredibly comfortable. I've already recommended Davina Furnishers to five of my friends!"</p>
+                    <div class="t-user">
+                        <div class="tu-av">TM</div>
+                        <div class="tu-info">
+                            <strong>Thoko Mwale</strong>
+                            <span>Area 18, Lilongwe</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="t-card tc-gold">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-text">"I sent them a photo of a bed frame I loved online and they built it perfectly. They understood exactly what I wanted. Absolutely professional service!"</p>
+                    <div class="t-user">
+                        <div class="tu-av">CB</div>
+                        <div class="tu-info">
+                            <strong>Chisomo Banda</strong>
+                            <span>Area 47, Lilongwe</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="t-card">
+                    <div class="t-stars">★★★★★</div>
+                    <p class="t-text">"Best furniture shop in Lilongwe — full stop. Quality is top notch and prices are very fair. My dining set still looks brand new after two years!"</p>
+                    <div class="t-user">
+                        <div class="tu-av">KP</div>
+                        <div class="tu-info">
+                            <strong>Kondwani Phiri</strong>
+                            <span>Lilongwe City</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOME CTA -->
+    <section class="home-cta-sec fade-up">
+        <div class="cta-glow"></div>
+        <div class="s-wrap cta-content">
+            <h2>Have a Unique Design in Mind?</h2>
+            <p>Share your inspiration and we'll bring it to life. Custom furniture built exactly for you.</p>
+            <button class="btn-white-pill" onclick="goto('custom')">
+                <svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor"><path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5L13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175l-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/></svg>
+                Request Custom Furniture
+            </button>
+        </div>
+    </section>
+</div>
+
+<!-- GALLERY PAGE -->
+<div id="pg-gallery" class="pg">
+    <div class="custom-hero">
+        <h1>Our Collection</h1>
+        <p>Premium handcrafted furniture for your Malawian home</p>
+    </div>
+    <section style="padding: 80px 0;">
+        <div class="s-wrap">
+            <div class="gal-filters">
+                <button class="f-btn on" data-f="All" onclick="filterGallery('All', this)">All</button>
+                <button class="f-btn" data-f="Sofa" onclick="filterGallery('Sofa', this)">Sofas</button>
+                <button class="f-btn" data-f="Bed" onclick="filterGallery('Bed', this)">Beds</button>
+                <button class="f-btn" data-f="Table" onclick="filterGallery('Table', this)">Tables</button>
+                <button class="f-btn" data-f="Wardrobe" onclick="filterGallery('Wardrobe', this)">Wardrobes</button>
+            </div>
+            <div class="products-grid" id="galGrid"></div>
+        </div>
+    </section>
+</div>
+
+<!-- DETAIL PAGE -->
+<div id="pg-detail" class="pg">
+    <section style="padding: 120px 0;">
+        <div class="s-wrap" id="detWrap"></div>
+    </section>
+</div>
+
+<!-- CUSTOM REQUEST PAGE -->
+<div id="pg-custom" class="pg">
+    <div class="custom-hero">
+        <h1>Custom Furniture Request</h1>
+        <p>Describe your dream piece and we'll build it just for you</p>
+    </div>
+    <div class="custom-body">
+        <div class="custom-grid">
+            <div class="custom-form-side">
+                <h2 class="form-title">Tell Us What You Want</h2>
+                <p class="form-sub">Fill in the details below — our team will contact you on WhatsApp with a quote within 24 hours.</p>
+                <div id="cusSuccess" style="display:none" class="success-msg">
+                    <svg viewBox="0 0 16 16" width="24" height="24" fill="#2e7d32"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                    <div><strong>Request Submitted!</strong><p>Thank you! Davina Furnishers will contact you on WhatsApp shortly. 🎉</p></div>
+                </div>
+                <form class="rf-form" id="cusForm" onsubmit="submitCustomOrder(event)">
+                    <div class="f-row">
+                        <div class="f-grp">
+                            <label>Full Name *</label>
+                            <input type="text" placeholder="Your full name" required/>
+                        </div>
+                        <div class="f-grp">
+                            <label>WhatsApp Number *</label>
+                            <input type="tel" placeholder="+265 994 040 900" required/>
+                        </div>
+                    </div>
+                    <div class="f-grp">
+                        <label>Furniture Type *</label>
+                        <select required>
+                            <option value="">-- Select furniture type --</option>
+                            <option>Sofa / Sofa Set</option>
+                            <option>Bed Frame</option>
+                            <option>Dining Table & Chairs</option>
+                            <option>Wardrobe</option>
+                            <option>TV Stand / Entertainment Unit</option>
+                            <option>Office Desk / Chair</option>
+                            <option>Other (describe below)</option>
+                        </select>
+                    </div>
+                    <div class="f-grp">
+                        <label>Upload Inspiration Image (optional)</label>
+                        <div class="upload-area" onclick="document.getElementById('fileInp').click()">
+                            <input type="file" id="fileInp" accept="image/*" style="display:none" onchange="previewUpload(event)"/>
+                            <div id="uploadPH">
+                                <svg viewBox="0 0 24 24" width="44" height="44" fill="var(--gold)"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 14H6v-2l3.5-4.5 2.5 3.01L15 11l3 4v2z"/></svg>
+                                <strong>Click to upload an image</strong>
+                                <span>JPG, PNG, WEBP up to 10MB</span>
+                            </div>
+                            <img id="imgPrev" style="display:none;max-width:100%;border-radius:8px;margin:0 auto"/>
+                        </div>
+                    </div>
+                    <div class="f-grp">
+                        <label>Describe What You Want *</label>
+                        <textarea placeholder="e.g. I want a 3-seater sofa in dark brown leather with wooden legs, approx 2.2m wide. Similar to the image above..." required></textarea>
+                    </div>
+                    <div class="f-grp">
+                        <label>Budget (Optional)</label>
+                        <input type="text" placeholder="e.g. MK 150,000 – MK 200,000"/>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                        Submit Request
+                    </button>
+                </form>
+            </div>
+            <div class="custom-info-side fade-up">
+                <div class="info-card">
+                    <h3>How It Works</h3>
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-txt"><strong>Fill the Form</strong><p>Describe your furniture and upload a reference image</p></div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-txt"><strong>We Review</strong><p>Our team reviews your request within 24 hours</p></div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-txt"><strong>Get a Quote</strong><p>We contact you on WhatsApp with pricing and timeline</p></div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <div class="step-txt"><strong>We Build It</strong><p>Your custom piece is crafted with precision and care</p></div>
+                    </div>
+                </div>
+
+                <div class="wa-card">
+                    <div class="wa-icon-large">
+                        <svg viewBox="0 0 16 16" width="48" height="48" fill="white"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+                    </div>
+                    <h3>Prefer WhatsApp?</h3>
+                    <p>Message us directly for a faster response and to send photos of your furniture ideas.</p>
+                    <a href="https://wa.me/265994040900" target="_blank" class="wa-btn-large">
+                        <svg viewBox="0 0 16 16" width="20" height="20" fill="white"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+                        Chat with a Designer
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT PAGE -->
+<div id="pg-about" class="pg">
+    <div class="custom-hero">
+        <h1>About Davina Furnishers</h1>
+        <p>Our story, our craft, our promise to Malawi</p>
+    </div>
+    <section class="about-hero-sec">
+        <div class="s-wrap">
+            <div class="about-grid">
+                <div class="about-content fade-up">
+                    <div class="s-tag">OUR STORY</div>
+                    <h1 class="about-h1">Crafting Quality<br/>Since 2016</h1>
+                    <div class="about-text">
+                        <p>Davina Furnishers was founded in Lilongwe, Malawi with one simple mission: to make premium, handcrafted furniture accessible to Malawian families and businesses.</p>
+                        <p>What started as a small workshop has grown into one of Lilongwe's most trusted furniture businesses, proudly serving over 500 happy customers across Malawi.</p>
+                        <p>Every piece we create is built by skilled local craftsmen using quality materials. We take pride in our work — and it shows in every sofa, bed, and dining table we produce.</p>
+                    </div>
+                    <div class="about-stats">
+                        <div class="a-stat">
+                            <span class="a-stat-num">500+</span>
+                            <span class="a-stat-label">Happy Customers</span>
+                        </div>
+                        <div class="a-stat">
+                            <span class="a-stat-num">8+</span>
+                            <span class="a-stat-label">Years in Business</span>
+                        </div>
+                        <div class="a-stat">
+                            <span class="a-stat-num">50+</span>
+                            <span class="a-stat-label">Products Available</span>
+                        </div>
+                    </div>
+                    <button class="pill-btn" onclick="goto('contact')">Get In Touch →</button>
+                </div>
+                <div class="about-visual fade-up">
+                    <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80" alt="Davina Furnishers Interior" class="about-main-img"/>
+                    <div class="about-values">
+                        <div class="val-card">
+                            <div class="val-icon"><svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+                            <span>Passion</span>
+                        </div>
+                        <div class="val-card">
+                            <div class="val-icon"><svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg></div>
+                            <span>Quality</span>
+                        </div>
+                        <div class="val-card">
+                            <div class="val-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
+                            <span>Trust</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Our Showroom Section -->
+    <section class="visit-sec fade-up">
+        <div class="s-wrap" style="text-align: center;">
+            <div class="v-tag">FIND US</div>
+            <h2 class="v-title">Visit Our Showroom</h2>
+            <div class="v-grid">
+                <div class="v-card">
+                    <div class="v-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                    <h4>Location</h4>
+                    <p>Area 47, Lilongwe<br/>Malawi</p>
+                </div>
+                <div class="v-card">
+                    <div class="v-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+                    <h4>Opening Hours</h4>
+                    <p>Mon – Sat: 8am – 6pm<br/>Sunday: 10am – 4pm</p>
+                </div>
+                <div class="v-card">
+                    <div class="v-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+                    <h4>Call / WhatsApp</h4>
+                    <p>+265 994 040 900</p>
+                </div>
+                <div class="v-card">
+                    <div class="v-icon"><svg viewBox="0 0 24 24"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg></div>
+                    <h4>Social Media</h4>
+                    <p>@DavinaFurnishersMW<br/>Facebook &amp; Instagram</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- CONTACT PAGE -->
+<div id="pg-contact" class="pg">
+    <div class="custom-hero">
+        <h1>Contact Us</h1>
+        <p>We're here to help you create your perfect home</p>
+    </div>
+    <section class="contact-sec">
+        <div class="s-wrap">
+            <div class="contact-grid">
+                <div class="c-info-side fade-up">
+                    <h1 class="c-h1">Get In Touch</h1>
+                    <p class="c-sub">Have a question about a product, need a quote, or want to visit our showroom? We're always happy to help.</p>
+                    
+                    <div class="c-info-list">
+                        <div class="c-info-item">
+                            <div class="c-info-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
+                            <div class="c-info-text">
+                                <strong>Showroom Address</strong>
+                                <p>Area 47, Lilongwe, Malawi</p>
+                            </div>
+                        </div>
+                        <div class="c-info-item">
+                            <div class="c-info-icon"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
+                            <div class="c-info-text">
+                                <strong>Phone / WhatsApp</strong>
+                                <p>+265 994 040 900</p>
+                            </div>
+                        </div>
+                        <div class="c-info-item">
+                            <div class="c-info-icon"><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg></div>
+                            <div class="c-info-text">
+                                <strong>Hours</strong>
+                                <p>Mon–Sat 8am–6pm | Sun 10am–4pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/265994040900" target="_blank" class="btn-wa-solid">
+                        <svg viewBox="0 0 16 16" width="20" height="20" fill="white"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+                        Message on WhatsApp
+                    </a>
+                </div>
+                
+                <div class="c-form-side fade-up">
+                    <div class="contact-form-card">
+                        <div id="conSuccess" style="display:none" class="success-msg">
+                            <svg viewBox="0 0 16 16" width="24" height="24" fill="#2e7d32"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                            <div><strong>Message Sent!</strong><p>Thank you! We've received your message and will respond shortly.</p></div>
+                        </div>
+                        <form class="c-form" id="conForm" onsubmit="submitContact(event)">
+                            <div class="f-grp">
+                                <label>Your Name *</label>
+                                <input type="text" placeholder="Full name" required/>
+                            </div>
+                            <div class="f-grp">
+                                <label>Phone Number *</label>
+                                <input type="tel" placeholder="+265 994 040 900" required/>
+                            </div>
+                            <div class="f-grp">
+                                <label>Product of Interest</label>
+                                <input type="text" placeholder="e.g. 3-seater sofa, king bed..."/>
+                            </div>
+                            <div class="f-grp">
+                                <label>Message *</label>
+                                <textarea placeholder="How can we help you?" style="height:120px" required></textarea>
+                            </div>
+                            <button type="submit" class="c-submit-btn">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- ADMIN LOGIN PAGE -->
+<div id="pg-adminlogin" class="pg">
+    <div class="adm-login">
+        <div class="adm-login-card">
+            <div style="text-align:center; margin-bottom:40px;">
+                <div class="n-logo-mark" style="margin:0 auto 16px;">DF</div>
+                <h2 style="font-size:2rem; color:var(--ink);">Staff Portal</h2>
+                <p style="color:var(--muted);">Enter credentials to manage orders</p>
+            </div>
+            <form onsubmit="adminLogin(event)" style="display:flex; flex-direction:column; gap:20px;">
+                <div class="f-grp">
+                    <label>Username</label>
+                    <input type="text" id="admUser" placeholder="admin" required/>
+                </div>
+                <div class="f-grp">
+                    <label>Password</label>
+                    <input type="password" id="admPass" placeholder="••••••••" required/>
+                </div>
+                <div id="admErr" style="display:none; color:#d32f2f; font-size:0.85rem; text-align:center;">
+                    Invalid username or password. Please try again.
+                </div>
+                <button type="submit" class="submit-btn" style="width:100%;">Login to Dashboard</button>
+                <a href="#" onclick="goto('home')" style="text-align:center; font-size:0.85rem; color:var(--muted); margin-top:10px;">Return to Site</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- ADMIN DASHBOARD -->
+<div id="pg-admin" class="pg">
+    <div class="adm-wrap">
+        <div class="adm-topbar">
+            <div class="n-logo">
+                <div class="n-logo-mark">DF</div>
+                <span>Davina Management</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:24px;">
+                <div style="text-align:right;">
+                    <div style="font-size:0.85rem; font-weight:700; color:var(--ink);">System Admin</div>
+                    <div style="font-size:0.75rem; color:var(--muted);">Lilongwe Branch</div>
+                </div>
+                <button onclick="adminLogout()" class="btn-back" style="padding:8px 16px;">Logout</button>
+            </div>
+        </div>
+        <div style="display:flex;">
+            <aside class="adm-sidebar">
+                <div class="adm-nav-item on">
+                    <svg viewBox="0 0 16 16"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+                    Dashboard Overview
+                </div>
+                <div class="adm-nav-item">
+                    <svg viewBox="0 0 16 16"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49A1.003 1.003 0 0 0 20 4H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                    Custom Orders
+                </div>
+                <div class="adm-nav-item">
+                    <svg viewBox="0 0 16 16"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/></svg>
+                    Inventory Analytics
+                </div>
+            </aside>
+            <main class="adm-main">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:40px;">
+                    <h2 style="font-size:2.4rem;">Performance Overview</h2>
+                    <div class="hero-tag" style="margin-bottom:0;">Live Stats</div>
+                </div>
+                <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:24px; margin-bottom:48px;">
+                    <div class="info-card" style="margin-bottom:0;">
+                        <small style="color:var(--muted); text-transform:uppercase; letter-spacing:1px; font-weight:700;">Total Orders</small>
+                        <div style="font-size:2rem; font-weight:700; margin-top:8px;">1,284</div>
+                        <div style="color:#2e7d32; font-size:0.8rem; margin-top:4px;">↑ 12% this month</div>
+                    </div>
+                    <div class="info-card" style="margin-bottom:0;">
+                        <small style="color:var(--muted); text-transform:uppercase; letter-spacing:1px; font-weight:700;">Active Quotes</small>
+                        <div style="font-size:2rem; font-weight:700; margin-top:8px;">42</div>
+                        <div style="color:var(--gold); font-size:0.8rem; margin-top:4px;">Pending review</div>
+                    </div>
+                    <div class="info-card" style="margin-bottom:0;">
+                        <small style="color:var(--muted); text-transform:uppercase; letter-spacing:1px; font-weight:700;">Revenue (MK)</small>
+                        <div style="font-size:1.8rem; font-weight:700; margin-top:8px;">8.2M</div>
+                        <div style="color:#2e7d32; font-size:0.8rem; margin-top:4px;">↑ 8% vs last year</div>
+                    </div>
+                    <div class="info-card" style="margin-bottom:0;">
+                        <small style="color:var(--muted); text-transform:uppercase; letter-spacing:1px; font-weight:700;">Happy Clients</small>
+                        <div style="font-size:2rem; font-weight:700; margin-top:8px;">98%</div>
+                        <div style="color:#2e7d32; font-size:0.8rem; margin-top:4px;">Feedback score</div>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <h3 style="margin-bottom:24px;">Recent Custom Requests</h3>
+                    <table style="width:100%; border-collapse:collapse; text-align:left;">
+                        <thead>
+                            <tr style="border-bottom:2px solid #f5f5f5; color:var(--muted); font-size:0.85rem;">
+                                <th style="padding:16px 0;">Customer</th>
+                                <th>Item Type</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th style="text-align:right;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size:0.95rem;">
+                            <tr style="border-bottom:1px solid #f5f5f5;">
+                                <td style="padding:16px 0;"><strong>Chifundo Phiri</strong><br/><small style="color:var(--muted);">+265 888 123 456</small></td>
+                                <td>3-Seater Leather Sofa</td>
+                                <td>2 hours ago</td>
+                                <td><span style="background:#fff3e0; color:#ef6c00; padding:4px 10px; border-radius:50px; font-size:0.75rem; font-weight:700;">PENDING</span></td>
+                                <td style="text-align:right;"><button class="p-btn">Review</button></td>
+                            </tr>
+                            <tr style="border-bottom:1px solid #f5f5f5;">
+                                <td style="padding:16px 0;"><strong>Mercy Banda</strong><br/><small style="color:var(--muted);">+265 999 765 432</small></td>
+                                <td>King Size Bed Frame</td>
+                                <td>5 hours ago</td>
+                                <td><span style="background:#e8f5e9; color:#2e7d32; padding:4px 10px; border-radius:50px; font-size:0.75rem; font-weight:700;">QUOTED</span></td>
+                                <td style="text-align:right;"><button class="p-btn">Details</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="site-footer">
+    <div class="ft-grid">
+        <div class="ft-brand">
+            <a class="f-logo" href="#">
+                <div class="n-logo-mark">DF</div>
+                <span>Davina Furnishers</span>
+            </a>
+            <p>Premium handcrafted furniture for Malawian homes and businesses. Built with love in Lilongwe since 2016.</p>
+            <div class="ft-socials">
+                <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></a>
+                <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="currentColor" stroke-width="1.5"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="currentColor" stroke-width="2"/></svg></a>
+                <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" fill="currentColor"/></svg></a>
+            </div>
+        </div>
+        <div class="ft-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#" onclick="goto('home')">Home</a></li>
+                <li><a href="#" onclick="goto('gallery')">Gallery</a></li>
+                <li><a href="#" onclick="goto('custom')">Custom Order</a></li>
+                <li><a href="#" onclick="goto('about')">About Us</a></li>
+                <li><a href="#" onclick="goto('contact')">Contact</a></li>
+                <li><a href="#" onclick="goto('adminlogin')">Admin Login</a></li>
+            </ul>
+        </div>
+        <div class="ft-col">
+            <h4>Categories</h4>
+            <ul>
+                <li><a href="#" onclick="goto('gallery')">Sofas</a></li>
+                <li><a href="#" onclick="goto('gallery')">Beds</a></li>
+                <li><a href="#" onclick="goto('gallery')">Dining Tables</a></li>
+                <li><a href="#" onclick="goto('gallery')">Wardrobes</a></li>
+            </ul>
+        </div>
+        <div class="ft-col">
+            <h4>Contact</h4>
+            <p><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>Area 47, Lilongwe, Malawi</p>
+            <p><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+265 994 040 900</p>
+            <p><svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>Mon–Sat 8am–6pm</p>
+        </div>
+    </div>
+    <div class="ft-bottom">
+        <p>© 2024 Davina Furnishers, Lilongwe, Malawi. All rights reserved.</p>
+    </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/265994040900" target="_blank" class="float-wa" aria-label="Contact on WhatsApp">
+    <svg viewBox="0 0 16 16"><path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/></svg>
+</a>
+
+<script src="main.js"></script>
+</body>
+</html>

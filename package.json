@@ -1,0 +1,11 @@
+{
+  "name": "davina-furnishers",
+  "version": "1.0.0",
+  "description": "Premium furniture website for Davina Furnishers",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx -y browser-sync start --server --files \"*.html, *.css, *.js, assets/*\""
+  },
+  "author": "Davina Furnishers",
+  "license": "ISC"
+}
