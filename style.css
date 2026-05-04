@@ -1704,11 +1704,14 @@ footer { background: var(--ink); padding: 100px 0 0; color: #fff; }
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; }
-  .hero-right { display: none; }
-  .hero-left { padding: 140px 32px 80px; align-items: center; text-align: center; }
-  .hero-sub { margin: 0 auto 48px; }
-  .hero-btns { justify-content: center; }
-  .hero-stats { justify-content: center; }
+  .hero-right { display: block; padding: 0 16px 40px; max-width: 100%; margin: 0 auto; order: 2; overflow: visible; }
+  .hero-img-main { width: 100%; height: auto; border-radius: 20px; box-shadow: var(--shadow-lg); transform: scale(1); }
+  .hero-img-overlay { display: none; }
+  .hero-badge-float { display: none; } /* Hide float badge on mobile to keep it clean */
+  .hero-left { padding: 100px 24px 40px; align-items: center; text-align: center; order: 1; }
+  .hero-sub { margin: 0 auto 32px; font-size: 1.1rem; }
+  .hero-btns { justify-content: center; margin-bottom: 20px; }
+  .hero-stats { justify-content: center; order: 3; padding-bottom: 40px; }
   .cats-grid { grid-template-columns: 1fr 1fr; }
   .why-grid { grid-template-columns: 1fr; gap: 64px; }
   .ft-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
