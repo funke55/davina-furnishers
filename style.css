@@ -1713,15 +1713,16 @@ footer { background: var(--ink); padding: 100px 0 0; color: #fff; }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-right { display: block; padding: 0 16px 40px; max-width: 100%; margin: 0 auto; order: 2; overflow: visible; }
-  .hero-img-main { width: 100%; height: auto; border-radius: 20px; box-shadow: var(--shadow-lg); transform: scale(1); }
+  .hero { display: flex; flex-direction: column; width: 100%; overflow: hidden; min-height: auto; }
+  .hero-right { display: block; width: 100%; padding: 0 20px 40px; margin: 0; order: 2; overflow: visible; }
+  .hero-img-main { width: 100%; height: auto; border-radius: 20px; box-shadow: var(--shadow-lg); transform: none; }
   .hero-img-overlay { display: none; }
   .hero-badge-float { 
     position: relative; 
-    bottom: 20px; 
-    left: 0; 
-    margin: -30px 24px 0; 
+    margin: -40px auto 0; 
+    width: fit-content;
+    bottom: 0;
+    left: 0;
     z-index: 10;
     animation: none;
     padding: 16px 20px;
@@ -1731,10 +1732,19 @@ footer { background: var(--ink); padding: 100px 0 0; color: #fff; }
   .hbf-txt strong { font-size: 0.85rem; }
   .hbf-txt span { font-size: 0.75rem; }
   
-  .hero-left { padding: 100px 24px 40px; align-items: center; text-align: center; order: 1; }
-  .hero-sub { margin: 0 auto 32px; font-size: 1.1rem; }
-  .hero-btns { justify-content: center; margin-bottom: 20px; }
-  .hero-stats { justify-content: center; order: 3; padding-bottom: 40px; }
+  .hero-left { 
+    width: 100%; 
+    padding: 100px 20px 40px; 
+    align-items: center; 
+    text-align: center; 
+    order: 1; 
+    box-sizing: border-box;
+  }
+  .hero-tag { margin: 0 auto 24px; }
+  .hero-h1 { width: 100%; max-width: 100%; margin-left: 0; margin-right: 0; }
+  .hero-sub { margin: 0 auto 32px; font-size: 1.1rem; max-width: 100%; }
+  .hero-btns { justify-content: center; margin-bottom: 32px; width: 100%; }
+  .hero-stats { justify-content: center; width: 100%; margin: 0 auto; gap: 20px; }
   .cats-grid { grid-template-columns: 1fr 1fr; }
   .why-grid { grid-template-columns: 1fr; gap: 64px; }
   .ft-grid { grid-template-columns: 1fr 1fr; gap: 48px; }
