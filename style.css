@@ -1709,7 +1709,20 @@ footer { background: var(--ink); padding: 100px 0 0; color: #fff; }
   .hero-right { display: block; padding: 0 16px 40px; max-width: 100%; margin: 0 auto; order: 2; overflow: visible; }
   .hero-img-main { width: 100%; height: auto; border-radius: 20px; box-shadow: var(--shadow-lg); transform: scale(1); }
   .hero-img-overlay { display: none; }
-  .hero-badge-float { display: none; } /* Hide float badge on mobile to keep it clean */
+  .hero-badge-float { 
+    position: relative; 
+    bottom: 20px; 
+    left: 0; 
+    margin: -30px 24px 0; 
+    z-index: 10;
+    animation: none;
+    padding: 16px 20px;
+  }
+  .hbf-icon { width: 40px; height: 40px; }
+  .hbf-icon svg { width: 20px; height: 20px; }
+  .hbf-txt strong { font-size: 0.85rem; }
+  .hbf-txt span { font-size: 0.75rem; }
+  
   .hero-left { padding: 100px 24px 40px; align-items: center; text-align: center; order: 1; }
   .hero-sub { margin: 0 auto 32px; font-size: 1.1rem; }
   .hero-btns { justify-content: center; margin-bottom: 20px; }
