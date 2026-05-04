@@ -420,7 +420,9 @@ nav.solid {
 
 .marquee-inner {
   display: inline-flex;
+  flex-shrink: 0;
   animation: marqueeScroll 30s linear infinite;
+  -webkit-animation: marqueeScroll 30s linear infinite;
 }
 
 @keyframes marqueeScroll {
@@ -428,9 +430,15 @@ nav.solid {
   to { transform: translateX(-50%); }
 }
 
+@-webkit-keyframes marqueeScroll {
+  from { -webkit-transform: translateX(0); }
+  to { -webkit-transform: translateX(-50%); }
+}
+
 .mq-item {
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
   gap: 16px;
   padding: 0 48px;
   font-size: 0.85rem;
