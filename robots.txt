@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://funke55.github.io/davina-furnishers/sitemap.xml
+Sitemap: https://funke55.github.io/funke-furnishers/sitemap.xml

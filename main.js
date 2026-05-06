@@ -1,5 +1,5 @@
 /* 
-  DAVINA FURNISHERS - CORE LOGIC
+  FUNKE FURNISHERS - CORE LOGIC
   Handling Navigation, Catalog, and Admin Functionality
 */
 
@@ -7,7 +7,7 @@
 // CONFIG & DATA
 // ============================================
 const WA_NUMBER = '265994040900';
-const WA_BASE_MSG = 'Hello Davina Furnishers! I am interested in ';
+const WA_BASE_MSG = 'Hello Funke Furnishers! I am interested in ';
 
 const CATEGORIES = [
   { name: 'Sofas', filter: 'Sofa', img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80&auto=format&fit=crop', count: 12 },
@@ -16,7 +16,7 @@ const CATEGORIES = [
 ];
 
 const PRODUCTS = [
-  { id: 1, name: 'Davina 3-Seater Sofa', cat: 'Sofa', price: 'MK 285,000', badge: 'hot', badgeTxt: 'Best Seller',
+  { id: 1, name: 'Funke 3-Seater Sofa', cat: 'Sofa', price: 'MK 285,000', badge: 'hot', badgeTxt: 'Best Seller',
     img: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=700&q=80&auto=format&fit=crop',
     desc: 'Luxurious 3-seater sofa with premium fabric and solid wood frame. Available in multiple colours.',
     feats: ['Solid wood frame', 'Premium foam cushions', '5 colour options', '2-year warranty'] },
@@ -232,13 +232,13 @@ window.submitCustomOrder = function(e) {
   const desc = form.querySelector('textarea').value;
   const budget = form.querySelectorAll('input[type="text"]')[1].value;
 
-  const msg = `*New Custom Order Request - Davina Furnishers*\n\n` +
+  const msg = `*New Custom Order Request - Funke Furnishers*\n\n` +
               `*Customer:* ${name}\n` +
               `*WhatsApp:* ${phone}\n` +
               `*Furniture Type:* ${type}\n` +
               `*Description:* ${desc}\n` +
               (budget ? `*Estimated Budget:* ${budget}\n` : '') +
-              `\n_Sent via davinafurnishers.mw_`;
+              `\n_Sent via funkefurnishers.mw_`;
 
   // Hide form and show success
   form.style.display = 'none';
@@ -280,7 +280,7 @@ window.previewUpload = function(e) {
 // ============================================
 // ADMIN LOGIC (SIMULATED)
 // ============================================
-const ADMIN_CREDENTIALS = { user: 'admin', pass: 'davina2024' };
+const ADMIN_CREDENTIALS = { user: 'admin', pass: 'funke2024' };
 
 window.adminLogin = function(e) {
   e.preventDefault();

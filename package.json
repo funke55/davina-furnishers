@@ -1,11 +1,11 @@
 {
-  "name": "davina-furnishers",
+  "name": "funke-furnishers",
   "version": "1.0.0",
-  "description": "Premium furniture website for Davina Furnishers",
+  "description": "Premium furniture website for Funke Furnishers",
   "main": "index.html",
   "scripts": {
     "dev": "npx -y browser-sync start --server --files \"*.html, *.css, *.js, assets/*\""
   },
-  "author": "Davina Furnishers",
+  "author": "Funke Furnishers",
   "license": "ISC"
 }
