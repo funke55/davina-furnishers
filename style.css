@@ -2884,6 +2884,46 @@ footer { background: var(--ink); padding: 100px 0 0; color: #fff; }
   min-height: 100px;
 }
 
+/* Password field with eye toggle */
+.pw-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.pw-wrap input {
+  width: 100%;
+  padding-right: 48px; /* room for the eye button */
+}
+.pw-eye {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  padding: 4px;
+  cursor: pointer;
+  color: var(--muted-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+  line-height: 0;
+}
+.pw-eye:hover {
+  color: var(--gold);
+  background: hsla(var(--gold-h), var(--gold-s), 45%, 0.08);
+}
+.pw-eye:active {
+  color: var(--gold-dk);
+}
+.pw-eye svg {
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
 /* Request Filter Tabs */
 #req-filter-tabs {
   display: flex;

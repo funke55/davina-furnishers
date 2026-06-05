@@ -427,6 +427,17 @@ const CUSTOM_REQUESTS = [
 
 let currentReqFilter = 'all';
 
+window.toggleAdminPassword = function(btn) {
+  const input = btn.closest('.pw-wrap').querySelector('input');
+  const eyeOpen = btn.querySelector('.eye-icon');
+  const eyeOff  = btn.querySelector('.eye-off-icon');
+  const isHidden = input.type === 'password';
+  input.type = isHidden ? 'text' : 'password';
+  eyeOpen.style.display = isHidden ? 'none' : '';
+  eyeOff.style.display  = isHidden ? '' : 'none';
+  btn.setAttribute('aria-label', isHidden ? 'Hide password' : 'Show password');
+};
+
 window.adminLogin = function(e) {
   e.preventDefault();
   const u = document.getElementById('admUser').value.trim();
