@@ -3049,9 +3049,6 @@ footer { background: var(--ink); padding: 100px 0 0; color: #fff; }
 }
 
 @media (max-width: 680px) {
-  .adm-sidebar {
-    display: none;
-  }
   .adm-main {
     margin-left: 0;
     padding: 24px 16px;
